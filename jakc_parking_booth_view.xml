@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<openerp>
+    <data>
+        <!-- PARK/BOOTH -->
+		
+        <record model="ir.ui.view" id="view_park_booth_form">
+            <field name="name">park.booth.form</field>
+            <field name="model">park.booth</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Booth" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>
+	                        <field name="booth_type_id"/>	 
+	                        <field name="is_manless"/>                        
+	                        <field name="state"/>                            
+	                    </group>
+	                    <notebook>
+	                    	<page string="Detail">
+	                    		<field name="booth_detail_ids" widget="one2many_list" nolabel="1">
+	                    			<tree string="Detail">
+	                    				<field name="pricing_id"/>
+	                    			</tree>
+	                    		</field>	                    		
+	                    	</page><field name="booth_detail_ids" widget="one2many_list" nolabel="1"/>
+	                    	<page string="Image">
+	                    		<field name="booth_image_type_ids" widget="one2many_list" nolabel="1"/>
+	                    	</page>
+	                    </notebook>	                		                	
+                	</sheet>  
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_park_booth_tree">
+            <field name="name">park.booth.tree</field>
+            <field name="model">park.booth</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Booth">
+                    <field name="name"/>
+                    <field name="booth_type_id"/>
+                    <field name="state"/>                    	
+                </tree>
+            </field>
+        </record>
+
+
+ 		<!-- PARK/BOOTH DETAIL -->
+
+		<record model="ir.ui.view" id="view_park_booth_detail_form">
+            <field name="name">park.booth.detail.form</field>
+            <field name="model">park.booth.detail</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Booth Detail" version="7.0">
+                	<sheet>
+	                    <group>                            	                        
+	                        <field name="pricing_id"/>	 
+	                        <field name="is_default"/>                        	                                    
+	                    </group>	                                		               
+                	</sheet>  
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_park_booth_detail_tree">
+            <field name="name">park.booth.detail.tree</field>
+            <field name="model">park.booth.detail</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Booth Detail">                    
+	            	<field name="pricing_id"/>	 
+	                <field name="is_default"/>                   	
+                </tree>
+            </field>
+        </record>
+
+                                            
+        <!-- PARK/ACTION -->
+        <!-- BOOTH -->
+		<record model="ir.actions.act_window" id="action_park_booth">
+            <field name="name">Booth</field>
+            <field name="res_model">park.booth</field>
+            <field name="view_mode">tree,form</field>
+        </record>		
+                                                                                                                                                                                                                                                                                                	
+    </data>                
+</openerp>

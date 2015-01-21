@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_park_booth_manager,park.booth.manager,model_park_booth,base.group_parking_manager,1,1,1,1
+access_park_booth_officer,park.booth.officer,model_park_booth,base.group_parking_officer,1,1,1,0
+access_park_booth_operator,park.booth.operator,model_park_booth,base.group_parking_operator,1,0,0,0
+
+access_park_booth_detail_manager,park.booth.detail.manager,model_park_booth_detail,base.group_parking_manager,1,1,1,1
+access_park_booth_detail_officer,park.booth.detail.image.officer,model_park_booth_detail,base.group_parking_officer,1,1,1,0
+access_park_booth_detail_operator,park.booth.detail.image.operator,model_park_booth_detail,base.group_parking_operator,1,0,0,0
